@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dom事件</title>
+</head>
+
+<body>
+  <div>任意点击</div>
+  <script>
+    document.body.addEventListener("click", function () {
+      alert("1点击了文档");
+    }, false);
+
+    document.body.addEventListener("click", function () {
+      alert("2点击了文档");
+    }, false);
+
+    document.body.addEventListener("click", function () {
+      alert("3点击了文档");
+    }, false);
+
+    // 模拟用户点击
+    // document.body.click();
+    document.body.dispatchEvent(new Event("click")); // 推荐使用这种方式触发模拟点击
+  </script>
+</body>
+
+</html>
